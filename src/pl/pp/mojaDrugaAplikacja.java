@@ -19,7 +19,7 @@ public class mojaDrugaAplikacja {
 }
 
 
-  //Zad 2:
+//Zad 2:
 
 package pl.pp;
 import java.util.Scanner;
