@@ -1,42 +1,16 @@
 package pl.pp;
 
-public class mojaSiodmaAplikacja {
+public class mojaOsmaAplikacja {
     public static void main(String[] args) {
-        // Tworzymy obiekt klasy Person bez podawania danych
-        Person person1 = new Person();
-        person1.hiToAll(); // wyświetlenie danych (puste imię, nazwisko, wiek = 0)
+        // Tworzenie konta bankowego z saldem 1000 PLN
+        Konto konto = new Konto("1234567890", 1000.0, "Jan Kowalski", "jan.kowalski@example.com", "+48 123-456-789");
 
-        // Ręczne ustawienie danych dla obiektu person1
-        person1.forename = "Mateusz";
-        person1.surname = "Karmazyn";
-        person1.age = 24;
-        person1.address = "ul. Długa 5, Kraków";
-        person1.birthYear = 2001;
-        person1.hiToAll(); // teraz powinny być widoczne pełne dane
+        // Przykładowe operacje na koncie
+        konto.withdraw(900.0);  // wypłata
+        konto.deposit(250.0);   // wpłata
+        konto.withdraw(50.0);   // kolejna wypłata
+        konto.withdraw(500.0);  // próba wypłaty więcej niż dostępne środki
 
-        // Utworzenie drugiego obiektu person2
-        Person person2 = new Person("Dariusz", "Walendziak", 42);
-        person2.address = "ul. Krótka 12, Warszawa"; // dodanie adresu
-        person2.birthYear = 1983;                    // dodanie roku urodzenia
-        person2.hiToAll(); // wyświetlenie danych osoby
-
-        // Zwiększamy wiek person1 o 2 lata, a person2 o 5 lat
-        person1.growOld(2);
-        person2.growOld(5);
-
-        // Zmniejszamy wiek: person1 o 1 rok, person2 o 2 lata
-        person1.beYounger();
-        person2.beYounger();
-        person2.beYounger();
-
-        // Wyświetlenie aktualnych danych po zmianach wieku
-        person1.hiToAll();
-        person2.hiToAll();
-
-        // Przykład użycia getterów i setterów do odczytu i zmiany imienia
-        System.out.println(person1.getName());   // odczytaj imię
-        person1.setName("Lolo");                // ustaw nowe imię
-        System.out.println(person1.getName());   // ponowny odczyt po zmianie
-        person1.hiToAll();                       // wyświetlenie pełnych danych
+        System.out.println(); // pusty wiersz dla przejrzystości
     }
 }
